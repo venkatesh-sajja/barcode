@@ -1,0 +1,10 @@
+.tophdr_name{position: absolute; top: 0; left: 0; width: 100%; background: #000000a4; padding: 15px; color:#fff; font-size: 16px; }
+.tophdr_name h3{margin: 0;}
+.topbg_cover{padding: 0!important; margin: 0 -15px; max-height: 230px;min-height: 230px; overflow: hidden;}
+.primary_wrapper{min-height: 400px;}
+.primary_wrapper_content{margin-top: -400px; position: relative;z-index: 1; padding: 40px 0 0 0;}
+.page_profile{width: 60px; height: 60px;  background-color:#fff;background-size:cover;border:solid 3px #fff; -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2); -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2); box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2); }
+.pg_name{font-size: 24px; color: #fff;}
+.page_subheadline{font-size: 14px; color: #fff;}
+.page_header_call2action{background: #fff !important; border: 0px solid transparent !important; color: #141A22 !important;}
+

@@ -1,0 +1,338 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4d77fa;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #4d77fa;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    height: 34px;
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+  .price_table {
+      margin-top: 50px;
+      margin-bottom: 50px
+  }
+  
+  .mypricing_content {
+      background-color: #fff;
+      border-radius:4px;
+  }
+  
+  
+  .mypricing_content .mypricing_head_price {
+      background-color: #f6f6f6
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head_bg {
+      border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head span {
+      color: #525252;
+      font-size:12px;
+      letter-spacing:5px;
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .sign {
+      color: #414141
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .currency {
+      color: #414141
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .cent {
+      color: #414141
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .month {
+      color: #414141
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li {
+      color: #a7a7a7
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li span {
+      color: #414141
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li:hover {
+      background-color: #E4E4E4;
+      border-left: 5px solid #4d77fa
+  }
+  
+  .mypricing_content .mypricing_price_btn a {
+      border: 1px solid #4d77fa;
+      color: #4d77fa
+  }
+  
+  .mypricing_content.active .mypricing_head_price .mypricing_head_content .head_bg,
+  .mypricing_content:hover .mypricing_head_price .mypricing_head_content .head_bg {
+      border-color: #4d77fa rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #4d77fa;
+      color: #fff
+  }
+  
+  .mypricing_content:hover .mypricing_head_price .mypricing_head_content .head span,
+  .mypricing_content.active .mypricing_head_price .mypricing_head_content .head span {
+      color: #fff
+  }
+  
+  .mypricing_content:hover .mypricing_price_btn a,
+  .mypricing_content.active .mypricing_price_btn a {
+      background-color: #4d77fa;
+      color: #fff
+  }
+  
+  
+  .row .table {
+      padding: 28px 0
+  }
+  
+  .mypricing_content {
+      overflow: hidden;
+      position: relative;
+      text-align: center
+  }
+  
+  .mypricing_content .mypricing_head_price {
+      margin: 0 0 20px 0
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content {
+      margin: 0 0 50px 0
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head_bg {
+      border-style: solid;
+      border-width: 90px 1329px 3px 399px;
+      position: absolute
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head {
+      padding-top: 36px;
+      position: relative;
+      z-index: 1
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head span {
+      
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag {
+      padding: 0 0 20px
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price {
+      display: block
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .sign {
+      display: inline-block;
+      
+      font-size: 28px;
+      font-weight: 400;
+      vertical-align: middle
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .currency {
+     
+      font-size: 40px;
+      font-weight: 300;
+      letter-spacing: -2px;
+      line-height: 40px;
+      padding: 0;
+      vertical-align: middle
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .price .cent {
+      display: inline-block;
+     
+      font-size: 24px;
+      font-weight: 400;
+      vertical-align: bottom
+  }
+  
+  .mypricing_content .mypricing_head_price .mypricing_price_tag .month {
+     
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      vertical-align: bottom
+  }
+  
+  .mypricing_content .mypricing_feature_list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li {
+     
+      font-size: 15px;
+      padding: 15px 0;
+      transition: all 0.3s ease-in-out 0s
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li:hover {
+      transition: all 0.3s ease-in-out 0s
+  }
+  
+  .mypricing_content .mypricing_feature_list ul li .fa {
+      padding: 0 10px
+  }
+  
+  .mypricing_content .mypricing_price_btn {
+      margin: 20px 0 32px
+  }
+  
+  .mypricing_content .mypricing_price_btn a {
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 18px;
+      outline: medium none;
+      padding: 12px 30px;
+      text-decoration: none;
+      text-transform: uppercase
+  }
+  
+  .mypricing_content,
+  .mypricing_content:hover,
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head_bg,
+  .mypricing_content:hover .mypricing_head_price .mypricing_head_content .head_bg,
+  .mypricing_content .mypricing_head_price .mypricing_head_content .head h2,
+  .mypricing_content:hover .mypricing_head_price .mypricing_head_content .head h2,
+  .mypricing_content .price,
+  .mypricing_content:hover .price,
+  .mypricing_content .mypricing_price_btn a,
+  .mypricing_content:hover .mypricing_price_btn a {
+      transition: all 0.3s ease-in-out 0s
+  }
+  
+  @media (max-width: 320px) {}
+  
+  @media (max-width: 767px) {
+      .mypricing_content {
+          margin-bottom: 75px
+      }
+  }
+  
+  .table_heading {
+      text-align: center
+  }
+  
+  .table_heading h1 {
+      color: #666;
+      margin: 0;
+      padding: 0 0 50px 0
+  }
+  
+  .qrchimp-button {
+      background-color: #333333;
+      color: #ffffff;
+      display: table;
+      font-size: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 50px;
+      outline-style: none;
+      outline-width: medium;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase
+  }
+  
+  .bottom_btn {
+      background-color: #333333;
+      color: #ffffff;
+      display: table;
+      font-size: 28px;
+      margin: 60px auto 20px;
+      padding: 10px 25px;
+      text-align: center;
+      text-transform: uppercase
+  }
+  
+  .qrchimp-button:hover {
+      background-color: #666;
+      color: #FFF;
+      text-decoration: none
+  }
+  
+  .bottom_btn:hover {
+      background-color: #666;
+      color: #FFF;
+      text-decoration: none
+  }
+
+  .mypricing_content .custom-control{
+      width: fit-content;
+      margin: 0 auto;
+  }
+
+  .most_pop{border:solid 1px #4d77fa;/* overflow-x: hidden; */margin-top: -20px;padding-bottom: 20px;}
+  .most_pop .head_bg{border-color: #4d77fa !important;color:#fff;border-width: 105px 1329px 3px 399px !important;margin-bottom: 20px;}
+  .most_pop .head span{color:#fff !important}
+  .most_pop .mypricing_price_btn a{background-color:#4d77fa; color:#fff;}
+  .qr_rec{color: #061244;z-index: 9;position: absolute;font-size: 10px;font-weight: 600;text-align: center;width: 104px;background: #f0d972;top: 22px;/* display: flex; */padding: 2px 12px;border-radius: 20px;margin: auto;left: 0;right: 0;}
+  .most_pop .mypricing_price_tag{/* padding-top:20px !important; */}
+  .most_pop .head{padding-top:55px !important}
