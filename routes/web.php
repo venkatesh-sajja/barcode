@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/',['as' => 'home_page', 'uses' => 'HomeController@index']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/custom_login', 'HomeController@custom_login')->name('custom_login');

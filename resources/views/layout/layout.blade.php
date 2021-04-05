@@ -16,7 +16,7 @@
 
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"></noscript>
     <link rel="preload" href="assets/css/font8b02.css?v=1615296389"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="assets/css/font8b02.css?v=1615296389"></noscript>
-    <link rel="preload" href="../maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="../maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></noscript>
+    <link rel="preload" href="assets/css/maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="../maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></noscript>
     <link rel="preload" href="view/common/css/preview8b02.css?v=1615296389"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="view/common/css/preview8b02.css?v=1615296389"></noscript>
     <link href='view/url/style8b02.css?v=1615296389' type='text/css' rel='stylesheet'  />
     <link href='css/custom.css' type='text/css' rel='stylesheet'  />
@@ -370,7 +370,8 @@
                             <img loading="lazy"src="assets/images/signup_popup_image.jpg" class="img-fluid">
                         </div>
                         <div class="col-md-6">
-                            <form class="signup_form p-4 pl-0">
+                            <form class="signup_form p-4 pl-0" method="POST" action="{{ route('custom_login') }}">
+                                 @csrf
                                 <input type="hidden" name="cmd" value="signInUser">
                                 <label class="radio mr-4 mb-3">
                                     <input type="radio" name="login_type" value="signup" checked> I'm a new user
@@ -389,7 +390,7 @@
                                     <span>Email ID*</span>
                                 </label>
                                 <label class="form-group has-float-label">
-                                    <input class="form-control" type="password"  name="pass"  placeholder="Password" required/>
+                                    <input class="form-control" type="password"  name="password"  placeholder="Password" required/>
                                     <span>Password*</span>
                                 </label>
                                 <label class="form-group has-float-label signup_block">
@@ -475,9 +476,9 @@
 <script type='text/javascript' src='assets/js/jquery-ui.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/blockui.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/popper.min8b02.js?v=1615296389' ></script>
-<script type='text/javascript' src='../www.gstatic.com/firebasejs/7.14.2/firebase-app.js' ></script>
-<script type='text/javascript' src='../www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js' ></script>
-<script type='text/javascript' src='../maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' ></script>
+<script type='text/javascript' src='assets/js/www.gstatic.com/firebasejs/7.14.2/firebase-app.js' ></script>
+<script type='text/javascript' src='assets/js/www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js' ></script>
+<script type='text/javascript' src='assets/js/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' ></script>
 <script type='text/javascript' src='assets/js/moment/moment.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/moment/moment-timezone.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/bootstrap-datetimepicker8b02.js?v=1615296389' ></script>
@@ -497,27 +498,36 @@
 <script type='text/javascript' src='view/common/js/upload8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='view/common/js/colorPicker8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='view/common/js/qrGenerator8b02.js?v=1615296389' ></script>
-<script type='text/javascript' src='../qrcodechimp.s3.amazonaws.com/sysconf/qr-options-conf8b02.js?v=1615296389' ></script>
-<script type='text/javascript' src='../qrcodechimp.s3.amazonaws.com/sysconf/qr-options-prebuilt-conf8b02.js?v=1615296389' ></script>
+<!-- <script type='text/javascript' src='../qrcodechimp.s3.amazonaws.com/sysconf/qr-options-conf8b02.js?v=1615296389' ></script>
+<script type='text/javascript' src='../qrcodechimp.s3.amazonaws.com/sysconf/qr-options-prebuilt-conf8b02.js?v=1615296389' ></script> -->
+<!-- 
+<script type='text/javascript' src='filesc610?l=/assets/svg/lib/qrcode.js,qr-options-common.js,qrcode-ext.js,qr-options-display.js,qr-options-actions.js&amp;1615296389' ></script> -->
 
-<script type='text/javascript' src='filesc610?l=/assets/svg/lib/qrcode.js,qr-options-common.js,qrcode-ext.js,qr-options-display.js,qr-options-actions.js&amp;1615296389' ></script>
 <script>
     $( document ).ready(function() {
         //console.log( "ready!" );
         //doNotShowBlocker(2);
-        generateDesignOptions(true);
-        initLoaderBind();
+        //generateDesignOptions(true);
+        //initLoaderBind();
+        $('input[type=radio][name=bedStatus]').change(function() {
+            if (this.value == 'allot') {
+                alert("Allot Thai Gayo Bhai");
+            }
+            else if (this.value == 'transfer') {
+                alert("Transfer Thai Gayo");
+            }
+        });
     });
 
 </script>  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180839899-1"></script>
+ <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180839899-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
     gtag('config', 'UA-180839899-1');
-  </script>
+  </script> -->
 
 <!-- Mirrored from www.qrcodechimp.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Mar 2021 04:58:53 GMT -->
 </html>
