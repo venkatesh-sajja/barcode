@@ -1,6 +1,7 @@
 let __signup_callback =false
 $(document).ready(function () {
-    $(".signup_form input[type=radio]").on("change", function (e) {
+    $(document).on("change",".signup_form input[type=radio]", function (e) {
+        
         $(".signup_form input[name=name]").val('')
         $(".signup_form input[name=email]").val('')
         $(".signup_form input[name=pass]").val('')
@@ -21,17 +22,21 @@ $(document).ready(function () {
     $(".signup_form").on("submit", function (e) {
         e.preventDefault();
         clearSignInErrorMsg();
-        var data = serializeFormObject($(this))
+        var url = $(this).attr('action');
+
+        var data = serializeFormObject($(this));
+        console.log(data);
+        console.log(url);
         if (data.login_type == "signup") {
             data.cmd = "signUp"
-            if(data.pass !== data.verify_pass){
+            if(data.password !== data.verify_pass){
                 $("#signInErrorMsg").html("Password doesn't match!");
                 return
             }
         } else {
             data.cmd = "signIn"
         }
-        $.post('/user/services/openapi', data, function (response) {
+        $.post(url, data, function (response) {
             if(!empty(response.data)){
                 window.user_info = response.data
                 logInUser(response.data) 
@@ -44,7 +49,10 @@ $(document).ready(function () {
                     if(__signup_callback){
                         __signup_callback = false
                         if($(".submit_qr_code").length ==1){
-                            $(".submit_qr_code").trigger("click")
+                            $(".submit_qr_code").trigger("click");
+                            window.location.href = '/home';
+                            console.log(response);
+
                         }
                     }
                 },2000)
