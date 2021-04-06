@@ -403,9 +403,9 @@
                                     <span id="signInSuccessMsg"></span>
                                     <button type="submit" class="btn btn-primary w-100 mt-4 btn-lg">Done</button>
                                 </div>
-                                <div class="form-group " >
+                                <!-- <div class="form-group " >
                                     <a href="#" class="font-12" id="forgot_password" style="display:none;"> Forgot Password?</a>
-                                </div>
+                                </div> -->
                                 
                             </form>
 
