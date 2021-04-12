@@ -86,7 +86,7 @@ function checkAndReGenerate(e)
             qrCodeParams.text = getVCardText();
         }
 
-        refreshQRCode();
+        // refreshQRCode();
         //generate();
     }, __KEYUP_DELAY);
 }

@@ -48,7 +48,7 @@ function checkAndReGenerate(e)
 
     _timeoutId = setTimeout(function(){
         //generate();
-        refreshQRCode();
+        // refreshQRCode();
     }, __KEYUP_DELAY);
 }
 

@@ -25,8 +25,7 @@ $(document).ready(function () {
         var url = $(this).attr('action');
 
         var data = serializeFormObject($(this));
-        console.log(data);
-        console.log(url);
+        
         if (data.login_type == "signup") {
             data.cmd = "signUp"
             if(data.password !== data.verify_pass){
@@ -45,12 +44,12 @@ $(document).ready(function () {
                 setTimeout(function(){
                     clearSignInErrorMsg()
                     $("#signup-free").modal("hide")
-
+                    window.location.href = base_url+'/home';
                     if(__signup_callback){
                         __signup_callback = false
                         if($(".submit_qr_code").length ==1){
                             $(".submit_qr_code").trigger("click");
-                            window.location.href = '/home';
+                            
                             console.log(response);
 
                         }
