@@ -15,7 +15,7 @@ function checkAndReGenerate(e)
         var sms = 'SMSTO:'+sms_mobile+':'+sms_msg
         qrCodeParams.text = sms 
 
-        refreshQRCode();
+        // refreshQRCode();
         //generate();
     }, __KEYUP_DELAY);
 }

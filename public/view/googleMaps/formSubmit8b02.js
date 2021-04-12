@@ -61,7 +61,7 @@ function checkAndReGenerate(e)
         }
         $('#maps').attr('src', $("input[name=weburl]").val())
         //generate();
-        refreshQRCode();
+        // refreshQRCode();
     }, __KEYUP_DELAY);
 }
 
