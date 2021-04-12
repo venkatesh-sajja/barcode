@@ -65,7 +65,7 @@ function checkAndReGenerate(e)
             //console.log("resetting");
             qrCodeParams.text = $("input[name=weburl]").val();
         }
-        refreshQRCode();
+        // refreshQRCode();
         //generate();
     }, __KEYUP_DELAY);
 }
