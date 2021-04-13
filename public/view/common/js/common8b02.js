@@ -556,7 +556,7 @@ $(document).ready(function () {
       $('.gntr-qr-btn').on("click",function(e){
         e.preventDefault();
         e.stopImmediatePropagation();
-        recreateQRCode();
+        // recreateQRCode();
     })
 
     $("#step_by_step_guide_btn").on("click", function(e){

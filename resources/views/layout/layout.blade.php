@@ -20,6 +20,11 @@
     <link rel="preload" href="view/common/css/preview8b02.css?v=1615296389"  as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="view/common/css/preview8b02.css?v=1615296389"></noscript>
     <link href='view/url/style8b02.css?v=1615296389' type='text/css' rel='stylesheet'  />
     <link href='css/custom.css' type='text/css' rel='stylesheet'  />
+    
+<script type='text/javascript' src='assets/js/lightbox-plus-jquery8b02.js?v=1615296389' ></script>
+<script type='text/javascript' src='assets/js/jquery-slim.min8b02.js?v=1615296389' ></script>
+<script type='text/javascript' src='assets/js/jquery-ui.min8b02.js?v=1615296389' ></script>
+
 </head>
 
 
@@ -471,9 +476,9 @@
         </div>
     </div>
 </body>
-<script type='text/javascript' src='assets/js/lightbox-plus-jquery8b02.js?v=1615296389' ></script>
-<script type='text/javascript' src='assets/js/jquery-slim.min8b02.js?v=1615296389' ></script>
-<script type='text/javascript' src='assets/js/jquery-ui.min8b02.js?v=1615296389' ></script>
+<script type="text/javascript">
+    var base_url = "{{url('/')}}";
+</script>
 <script type='text/javascript' src='assets/js/blockui.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/popper.min8b02.js?v=1615296389' ></script>
 <script type='text/javascript' src='assets/js/www.gstatic.com/firebasejs/7.14.2/firebase-app.js' ></script>

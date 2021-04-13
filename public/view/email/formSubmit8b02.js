@@ -16,7 +16,7 @@ function checkAndReGenerate(e)
     if(_timeoutId != null) clearTimeout(_timeoutId);
     _timeoutId = setTimeout(function(){
         // qrCodeParams.text = $("#text-qr-code").val();
-        refreshQRCode();
+        // refreshQRCode();
         //generate();
     }, __KEYUP_DELAY);
 }

@@ -1,6 +1,6 @@
 @extends('layout.layout')
 @section('content')
-    <section>    
+    <section> 
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 p-0 pl-3">
@@ -9,52 +9,7 @@
                             <h1 class="gntr_form_title pageTitle mb-0">QR Code Generator for URL</h1>
                             <a id="step_by_step_guide_btn" class=" d-none" href="#" class="btn btn-link font-14"><i class="icon-guide font-18 mr-2" style="vertical-align: text-bottom;"></i> Step by step guide</a>
                         </div>
-                        <div class="card-body">
-                            <form class="page_form" >
-                                <input type="hidden" name="id" value="new">
-                                <input type="hidden" name="qr_type" value="S">
-                                <input type="hidden" name="short_url" value="UsnKVQ60">
-                                <input type="hidden" name="page" value="url">
-                                <input type="hidden" name="template_name" value="">
-                                <div class="card collapse_card mb-3">
-                                    <div class="card-header card_top_header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <h5 class="mb-0">
-                                            <a class="btn btn-link collapsed" >
-                                                Basic Information
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse show secondary_color" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body fb_form_fields">
-                                            <div class="row">
-                                                <div class="col-md-2" style="padding-top:17px;" >URL or Text</div>
-                                                <div class="col-md-10">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-lg text-webpage" value="" autofocus name="weburl" placeholder="https://www.yoursite.com/">
-                                                    </div>
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input" id="dynamic" >
-                                                        <label class="custom-control-label" for="dynamic">Make dynamic (for tracking & analytics)</label>
-                                                    </div>
-                                                    <input type="hidden" name="dynamic" value=>
-                                                </div>
-                                            </div>
-                                            
-                                            <button type="button" class="btn btn-link btn-lg font-12 gntr-qr-btn float-right" type="submit">Refresh QR Code<i class="icon-refresh ml-2"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card collapse_card">
-                                    <div class="card-header card_top_header collapsed open_design_code_popup" id="headingTwo" data-toggle="modal" data-target="#gntr_prebuilt_tab" aria-expanded="false" aria-controls="collapseThree">
-                                        <h5 class="mb-0">
-                                            <a class="btn btn-link collapsed">
-                                                Design, Color and Decorate QR Code
-                                            </a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        @include('sections.url-form')
                         <div class="card-footer">
                             <button class="btn btn-primary btn-lg gntr-qr-btn w-100 mt-2 mb-2 submit_qr_code" type="button">Save QR
                                 Code<i class="icon-right_arrow font-16 easin ml-2"></i></button>
@@ -67,7 +22,7 @@
                             
                             <div class="gntr_qrcode_preview">
                                 <div class="gntr_qrcode_img preview_qr_img">
-                                    <img loading="lazy" id="qrcode_preview" src="assets/images/qr-code.png">
+                                    <img  id="qrcode_preview1" src="{{url('/default-qr-code/qr-code.png')}}">
                                 </div>
                             </div>
                             <div class="gntr_qrcode_setting">
@@ -513,11 +468,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end: FAQ - content -->
-
                     </div>
-
-
                 </div>
             </div>
         </div>
