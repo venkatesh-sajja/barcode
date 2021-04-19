@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/custom_login', 'HomeController@custom_login')->name('custom_login');
 
 Route::get('/get_url_qrcode', ['as' => 'get_url_qrcode', 'uses' => 'QrCodeGeneratorController@generateUrlCode']);
+Route::get('/vdcard', 'QrCodeGeneratorController@gnerateVDCard')->name('vdcard');
