@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -35,6 +37,7 @@ class HomeController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+
         if($request->login_type == 'login'){
             if (\Auth::attempt([
                 'email' => $request->email,
@@ -46,13 +49,20 @@ class HomeController extends Controller
                 $data['errorMsg'] = 'User details not found';
             }
         }else{
-            $data['data'] = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            ]);
-            $data['data']['user_img'] = 'assets/images/profile_pic.svg';
-            $data['data']['name'] = auth()->user()->name;
+            $user = User::where('email', '=', $request->email)->first();
+            if ($user === null) {
+                $data['data'] = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                ]);
+                auth()->login($data['data']);
+                $data['data']['user_img'] = 'assets/images/profile_pic.svg';
+                $data['data']['name'] = auth()->user()->name;
+            }else{
+                $data['errorMsg'] = 'User exists with the given email id'; 
+            }
+           
         }
         return $data;
 
