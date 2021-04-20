@@ -1,29 +1,21 @@
-
-var generate_url_code = function(){
+var qr_code_for_text = function () {
     var onLoad = function () {
-        appendGenerateUrlCode();
+        appendGenerateTextCodeEvent();
         saveQrCampaign()
-        $(".show_loader").hide();
-
     }
-    var appendGenerateUrlCode = function () {
-        $('.gntr-qr-btn').on('click', function () {
-            var url = $("[name='weburl']").val();
-            getUrlQrCode(url);
-        })
-        $("input[name='weburl']").blur(function () {
-            var url = $("[name='weburl']").val();
-            getUrlQrCode(url);
-        })
-    }
-    var getUrlQrCode = function (url) {
+    var appendGenerateTextCodeEvent = function () {
         
-        // $(".show_loader").show();
-        if (url !== '') {
+        $("#text-qr-code").blur(function () {
+            var text = $("#text-qr-code").val();
+            getUrlQrCode(text);
+        })
+    }
+    var getUrlQrCode = function (text) {
+        if (text !== '') {
             $.ajax({
                 url: get_url_qrcode,
                 data: {
-                    url:url
+                    url:text
                 },
                 beforeSend:function() {
                     $(".show_loader").show()
@@ -36,15 +28,12 @@ var generate_url_code = function(){
                 }
             })
         }
-        
-        
     }
     var saveQrCampaign = function () {
-        console.log($(".save_qr_campaign").length)
         $(document).on('click', '.save_qr_campaign',function(e){
-            debugger
-            var value = $("[name='weburl']").val();
+            var value = $("#text-qr-code").val();
             var name = $("#campaign_name_qr").val();
+            
             if (value !== '') {
                 $.ajax({
                     url: save_campaign,
@@ -59,8 +48,7 @@ var generate_url_code = function(){
                     method: 'GET',
                     dataType: 'JSON',
                     success: function (data) {
-                        
-                        // $(".gntr_qrcode_img").html(data)
+                        $("#template_name_modal").modal('hide')
                         $(".show_loader").hide();
                     }
                 })
@@ -68,10 +56,6 @@ var generate_url_code = function(){
         })
     }
     return {
-        init: function () {
-            onLoad()
-        }
-        
+        init:onLoad()
     }
 }();
-generate_url_code.init();
