@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Filesystem\Filesystem;
 use App\UserQrCode;
+use JeroenDesloovere\VCard\VCard;
 
 class QrCodeGeneratorController extends Controller
 {
@@ -60,4 +61,39 @@ class QrCodeGeneratorController extends Controller
         
 
     } 
+    public function gnerateVDCard(){
+        return view('vcard.vcard_form');
+    }
+    public function gnerateVDCard1(){
+        $vcard = new VCard();
+
+        // define variables
+        $lastname = 'Desloovere';
+        $firstname = 'Jeroen';
+        $additional = '';
+        $prefix = '';
+        $suffix = '';
+
+        // add personal data
+        $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
+
+        // add work data
+        $vcard->addCompany('Siesqo');
+        $vcard->addJobtitle('Web Developer');
+        $vcard->addRole('Data Protection Officer');
+        $vcard->addEmail('info@jeroendesloovere.be');
+        $vcard->addPhoneNumber(1234121212, 'PREF;WORK');
+        $vcard->addPhoneNumber(123456789, 'WORK');
+        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
+        $vcard->addLabel('street, worktown, workpostcode Belgium');
+        $vcard->addURL('http://www.jeroendesloovere.be');
+
+       // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
+
+        // return vcard as a string
+        //return $vcard->getOutput();
+
+        // return vcard as a download
+        return $vcard->download();
+    }
 }

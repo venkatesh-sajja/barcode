@@ -7,6 +7,7 @@
             <div class="col-md-12">
                 <ul class="generator_nav"><li>
                             <a href="home" @if($current_route == 'home') class="active" @endif >
+
                                 <div class="nav_icon_img"><i class="icon-webpage_2"></i></div>URL
                             </a>
                         </li><li>
@@ -22,7 +23,7 @@
                                 <div class="nav_icon_img"><i class="icon-youtube"></i></div>Youtube
                             </a>
                         </li><li>
-                            <a href="qr-code-generator-for-vcard.html" class="" >
+                            <a href="/vdcard" class="{{ Request::segment(1) === 'vdcard' ? 'active' : '' }}" >
                                 <div class="nav_icon_img"><i class="icon-vcard_2"></i></div>Vcard
                             </a>
                         </li><li>
