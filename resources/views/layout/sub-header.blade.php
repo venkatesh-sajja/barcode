@@ -1,13 +1,17 @@
+@php
+    $current_route = Request::route()->getName()
+@endphp
 <section>
     <div class="container gntr_nav_wrapper mt-4 mb-4">
         <div class="row">
             <div class="col-md-12">
                 <ul class="generator_nav"><li>
-                            <a href="home" class="{{ Request::segment(1) === 'home' ? 'active' : '' }}" >
+                            <a href="home" @if($current_route == 'home') class="active" @endif >
+
                                 <div class="nav_icon_img"><i class="icon-webpage_2"></i></div>URL
                             </a>
                         </li><li>
-                            <a href="qr-code-generator-for-text.html" class="" >
+                            <a href="qr_code_for_text" @if($current_route == 'qr_code_for_text') class="active" @endif >
                                 <div class="nav_icon_img"><i class="icon-text_1"></i></div>Text
                             </a>
                         </li><li>
