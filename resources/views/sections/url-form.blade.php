@@ -46,6 +46,8 @@
 </div>
 <script >
     var get_url_qrcode = "{{route('get_url_qrcode')}}";
-    var image_url = "{{url('/qr-code/')}}/"
+    var save_campaign = "{{route('save_campaign')}}";
+    var image_url = "{{url('/qr-code/')}}/";
+    var qr_type = 'Url';
 </script>
 <script src="{{asset('/js/custom/generate-url-code.js')}}"></script>

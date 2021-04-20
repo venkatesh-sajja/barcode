@@ -1,6 +1,8 @@
+
 var generate_url_code = function(){
     var onLoad = function () {
         appendGenerateUrlCode();
+        saveQrCampaign()
         $(".show_loader").hide();
 
     }
@@ -27,15 +29,44 @@ var generate_url_code = function(){
                     $(".show_loader").show()
                 },
                 type: 'GET',
-                dataType: 'json',
+                dataType: 'HTML',
                 success: function (data) {
-                    $("#qrcode_preview1").attr('src', image_url + data.image);
+                    
+                    $(".gntr_qrcode_img").html(data)
                     $(".show_loader").hide();
                 }
             })
         }
         
         
+    }
+    var saveQrCampaign = function () {
+        console.log($(".save_qr_campaign").length)
+        $(document).on('click', '.save_qr_campaign',function(e){
+            debugger
+            var value = $("[name='weburl']").val();
+            var name = $("#campaign_name_qr").val();
+            if (value !== '') {
+                $.ajax({
+                    url: save_campaign,
+                    data: {
+                        value: value,
+                        qr_type: qr_type,
+                        name:name
+                    },
+                    beforeSend:function() {
+                        $(".show_loader").show()
+                    },
+                    method: 'GET',
+                    dataType: 'JSON',
+                    success: function (data) {
+                        debugger
+                        // $(".gntr_qrcode_img").html(data)
+                        $(".show_loader").hide();
+                    }
+                })
+            }
+        })
     }
     return {
         init: function () {

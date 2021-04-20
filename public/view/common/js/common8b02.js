@@ -341,50 +341,50 @@ $(document).ready(function () {
         }
     })
 
-    $(".save_qr_campaign").on("click", function (e) {
-        if ($("input[name=short_url]").length == 1 && !(campaignData['page'] == "url" && (campaignData['dynamic'] == '' || campaignData['dynamic'] == false))) {
-            var short_url = $("input[name=short_url]").val()
-        } else {
-            var short_url = $("#campaign_name_qr").val()
-            short_url = short_url.toLocaleLowerCase()
-            short_url = short_url.replace(/ /g, '_');
-        }
-        showLoaderOnBlock()
-        $(".campaign_name_qr_alert").addClass("d-none")
-        if ($("#campaign_name_qr").val() == '') {
-            $(".campaign_name_qr_alert").text("Name cannot be empty")
-            $(".campaign_name_qr_alert").removeClass("d-none")
-            hideLoader()
-            return
-        }
-        campaignData['template_name'] = $("#campaign_name_qr").val()
-        if (typeof _qrOptions != "undefined") {
-            saveQrCodeTemplate(campaignData)
-        } else {
-            $.post('/user/services/api', {
-                cmd: 'saveQRCode',
-                qr_img: '',
-                formData: JSON.stringify(campaignData),
-                qrData: JSON.stringify(qrCodeParams),
-            }, function (response) {
-                // if (!empty(response.data)) {
-                if (response.errorMsg == "RCP") {
-                    $("#signup-free").modal("show")
+    // $(".save_qr_campaign").on("click", function (e) {
+    //     if ($("input[name=short_url]").length == 1 && !(campaignData['page'] == "url" && (campaignData['dynamic'] == '' || campaignData['dynamic'] == false))) {
+    //         var short_url = $("input[name=short_url]").val()
+    //     } else {
+    //         var short_url = $("#campaign_name_qr").val()
+    //         short_url = short_url.toLocaleLowerCase()
+    //         short_url = short_url.replace(/ /g, '_');
+    //     }
+    //     showLoaderOnBlock()
+    //     $(".campaign_name_qr_alert").addClass("d-none")
+    //     if ($("#campaign_name_qr").val() == '') {
+    //         $(".campaign_name_qr_alert").text("Name cannot be empty")
+    //         $(".campaign_name_qr_alert").removeClass("d-none")
+    //         hideLoader()
+    //         return
+    //     }
+    //     campaignData['template_name'] = $("#campaign_name_qr").val()
+    //     if (typeof _qrOptions != "undefined") {
+    //         saveQrCodeTemplate(campaignData)
+    //     } else {
+    //         $.post('/user/services/api', {
+    //             cmd: 'saveQRCode',
+    //             qr_img: '',
+    //             formData: JSON.stringify(campaignData),
+    //             qrData: JSON.stringify(qrCodeParams),
+    //         }, function (response) {
+    //             // if (!empty(response.data)) {
+    //             if (response.errorMsg == "RCP") {
+    //                 $("#signup-free").modal("show")
 
-                } else if (!empty(response.data)) {
-                    getQrImageUrl(short_url, function () {
-                        hideLoader()
-                        location.href = '/user/dashboard'
-                    })
-                } else if (response.data == 0) {
-                    $(".campaign_name_qr_alert").text("Name Already Exists")
-                    $(".campaign_name_qr_alert").removeClass("d-none")
-                }
+    //             } else if (!empty(response.data)) {
+    //                 getQrImageUrl(short_url, function () {
+    //                     hideLoader()
+    //                     location.href = '/user/dashboard'
+    //                 })
+    //             } else if (response.data == 0) {
+    //                 $(".campaign_name_qr_alert").text("Name Already Exists")
+    //                 $(".campaign_name_qr_alert").removeClass("d-none")
+    //             }
 
-                // }
-            })
-        }
-    })
+    //             // }
+    //         })
+    //     }
+    // })
 
     $("#campaign_name_qr").on("keyup", function (e) {
         if (e.target.value == '') {
