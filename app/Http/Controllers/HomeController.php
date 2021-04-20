@@ -57,4 +57,11 @@ class HomeController extends Controller
         return $data;
 
     }
+
+    /**
+     * function to load the qr code for text page
+     */
+    public function qrCodeForText(Request $request){
+        return view('qr-code-for-text');
+    }
 }
