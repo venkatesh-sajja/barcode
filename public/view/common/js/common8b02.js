@@ -305,28 +305,28 @@ $(document).ready(function () {
                     if (typeof _qrOptions != "undefined") {
                         saveQrCodeTemplate(campaignData)
                     } else {
-                        $.post('/user/services/api', {
-                            cmd: 'saveQRCode',
-                            qr_img: '',
-                            formData: JSON.stringify(campaignData),
-                            qrData: JSON.stringify(qrCodeParams),
-                        }, function (response) {
-                            // if (!empty(response.data)) {
-                            if (response.errorMsg == "RCP") {
-                                $("#signup-free").modal("show")
+                        // $.post('/user/services/api', {
+                        //     cmd: 'saveQRCode',
+                        //     qr_img: '',
+                        //     formData: JSON.stringify(campaignData),
+                        //     qrData: JSON.stringify(qrCodeParams),
+                        // }, function (response) {
+                        //     // if (!empty(response.data)) {
+                        //     if (response.errorMsg == "RCP") {
+                        //         $("#signup-free").modal("show")
 
-                            } else if (!empty(response.data)) {
-                                getQrImageUrl(short_url, function () {
-                                    hideLoader()
-                                    location.href = '/user/dashboard'
-                                })
-                            } else if (response.data == 0) {
-                                $(".campaign_name_qr_alert").text("Name Already Exists")
-                                $(".campaign_name_qr_alert").removeClass("d-none")
-                            }
+                        //     } else if (!empty(response.data)) {
+                        //         getQrImageUrl(short_url, function () {
+                        //             hideLoader()
+                        //             location.href = '/user/dashboard'
+                        //         })
+                        //     } else if (response.data == 0) {
+                        //         $(".campaign_name_qr_alert").text("Name Already Exists")
+                        //         $(".campaign_name_qr_alert").removeClass("d-none")
+                        //     }
 
-                            // }
-                        })
+                        //     // }
+                        // })
                     }
 
                 }
@@ -336,7 +336,7 @@ $(document).ready(function () {
 
             }
         } else {
-            $("#signup-free").modal("show")
+            $("#signup-free").modal("show");
             __signup_callback = true
         }
     })

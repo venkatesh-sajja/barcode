@@ -31,6 +31,9 @@ class HomeController extends Controller
     {
         return view('home.home');
     }
+      /**
+     * function to login or signup user
+     */
     public function custom_login(Request $request){
         $data =[];
         $this->validate($request, [
