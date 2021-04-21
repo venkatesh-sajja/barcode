@@ -2,7 +2,7 @@
 var generate_url_code = function(){
     var onLoad = function () {
         appendGenerateUrlCode();
-        saveQrCampaign()
+        saveQrCampaign();
         $(".show_loader").hide();
 
     }

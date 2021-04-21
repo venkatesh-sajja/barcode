@@ -65,15 +65,15 @@
                   </div>
                   <div class="gntr_qrcode_setting">
                      <ul class="nav mb-3 gntr_qrcode_setting_nav" id="gntr-tab" role="tablist1">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                            <a class="nav-link active" id="gntr_sticker_tab" data-toggle="pill1" href="#gntr_sticker" role="tab" aria-controls="gntr_sticker" aria-selected="true">sticker</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                            <a onclick="showDesignPopUp('#gntr_color_tab-1'); return false;" class="nav-link" id="gntr_color_tab" data-toggle="pill1" href="#gntr_color" role="tab" aria-controls="pills-profile" aria-selected="false">color</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                            <a onclick="showDesignPopUp('#gntr_shape_tab-1'); return false;" class="nav-link" id="gntr_shape_tab" data-toggle="pill1" href="#gntr_shape" role="tab" aria-controls="pills-contact" aria-selected="false">Shapes</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                            <a onclick="showDesignPopUp('#gntr_logo_tab-1'); return false;" class="nav-link" id="gntr_logo_tab" data-toggle="pill1" href="#gntr_logo" role="tab" aria-controls="pills-contact" aria-selected="false">Logo</a>
                         </li>
@@ -195,8 +195,12 @@
 <script >
     var get_url_qrcode = "{{route('get_url_qrcode')}}";
     var save_campaign = "{{route('save_campaign')}}";
+    var upload_custom_logo = "{{route('upload_custom_logo')}}";
     var image_url = "{{url('/qr-code/')}}/";
     var qr_type = 'Text';
+    var csrf_token = "{{ csrf_token() }}";
+    var public_uploads = "{{url('uploads')}}/"
 </script>
 <script src="{{asset('/js/custom/qr-code-for-text.js')}}"></script>
+<script src="{{asset('/js/custom/add-custom-logo.js')}}"></script>
 @endsection
