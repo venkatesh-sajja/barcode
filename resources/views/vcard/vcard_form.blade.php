@@ -498,5 +498,12 @@
                     </div>
                 </div>
             </section>
+<script >
+    var get_url_qrcode = "{{route('get_url_qrcode')}}";
+    var save_campaign = "{{route('save_campaign')}}";
+    var image_url = "{{url('/qr-code/')}}/";
+    var qr_type = 'VCard';
+</script>
+<script src="{{asset('/js/custom/generate-vcard-code.js')}}"></script>
 @endsection
 
