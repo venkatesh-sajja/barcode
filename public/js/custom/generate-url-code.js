@@ -42,7 +42,6 @@ var generate_url_code = function(){
     var saveQrCampaign = function () {
         console.log($(".save_qr_campaign").length)
         $(document).on('click', '.save_qr_campaign',function(e){
-            debugger
             var value = $("[name='weburl']").val();
             var name = $("#campaign_name_qr").val();
             if (value !== '') {

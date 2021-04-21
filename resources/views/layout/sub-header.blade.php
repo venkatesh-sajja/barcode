@@ -23,7 +23,7 @@
                                 <div class="nav_icon_img"><i class="icon-youtube"></i></div>Youtube
                             </a>
                         </li><li>
-                            <a href="vdcard" class="{{ Request::segment(1) === 'vdcard' ? 'active' : '' }}" >
+                            <a href="vdcard" @if($current_route == 'vdcard') class="active" @endif >
                                 <div class="nav_icon_img"><i class="icon-vcard_2"></i></div>Vcard
                             </a>
                         </li><li>

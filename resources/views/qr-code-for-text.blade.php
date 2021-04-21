@@ -16,7 +16,7 @@
                      <input type="hidden" name="page" value="text">
                      <input type="hidden" name="template_name" value="">
                      <input type="hidden" name="short_url" value="">
-                     <div class="card collapse_card mb-3">
+                   <div class="card collapse_card mb-3">
                         <div class="card-header card_top_header" id="headingTwo"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                            <h5 class="mb-0">
                               <a class="btn btn-link collapsed">
@@ -176,15 +176,15 @@
             <p><span style="font-size: medium;">&nbsp;</span></p>
             <p><span style="font-size: medium;">Create a text QR code in just 3 easy steps:</span></p>
             <p><span style="font-size: medium;"><span style="font-weight: bold;">1.</span>&nbsp;Name your QR code. Enter the text you want to display after a scan.<br /></span></p>
-            <p><span style="font-size: medium;"><img class="alignnone wp-image-1990" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/text.png" alt="" width="524" height="322" /></span></p>
+            <p><span style="font-size: medium;"><img class="alignnone wp-image-1990" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/text.png" alt="" width="524" height="322" /></span></p>
             <p><span style="font-size: medium;">&nbsp;</span></p>
             <p><span style="font-size: medium;"><span style="font-weight: bold;">2.</span>&nbsp;You can design your code with a sticker, colour and shapes of your choice. You can also upload your logo and place it within the QR code.</span></p>
-            <p><span style="font-size: medium;"><img class="alignnone size-medium wp-image-1885" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/scan-me-224x300.png" alt="" width="224" height="300" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="alignnone size-medium wp-image-1886" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/color-qr-code-239x300.png" alt="" width="239" height="300" /><br /></span></p>
+            <p><span style="font-size: medium;"><img class="alignnone size-medium wp-image-1885" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/scan-me-224x300.png" alt="" width="224" height="300" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="alignnone size-medium wp-image-1886" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/color-qr-code-239x300.png" alt="" width="239" height="300" /><br /></span></p>
             <p><span style="font-size: medium;">&nbsp;</span></p>
-            <p><span style="font-size: medium;"><img class="alignnone size-medium wp-image-1887" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/shape-qr-code-240x300.png" alt="" width="240" height="300" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="alignnone size-medium wp-image-1888" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/logo-qr-239x300.png" alt="" width="239" height="300" /></span></p>
+            <p><span style="font-size: medium;"><img class="alignnone size-medium wp-image-1887" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/shape-qr-code-240x300.png" alt="" width="240" height="300" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img class="alignnone size-medium wp-image-1888" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/logo-qr-239x300.png" alt="" width="239" height="300" /></span></p>
             <p><span style="font-size: medium;">&nbsp;</span></p>
             <p><span style="font-size: medium;"><span style="font-weight: bold;">3.&nbsp;</span>Save your QR code. Hurray! your QR code is ready.<br /></span></p>
-            <p><span style="font-size: medium;"><img class="alignnone wp-image-1991" src="../qrcodechimp.s3.amazonaws.com/blog/wp-content/uploads/2019/08/qr-vcard-1.png" alt="" width="266" height="350" /><br /></span></p>
+            <p><span style="font-size: medium;"><img class="alignnone wp-image-1991" src="images/qrcodechimp/blog/wp-content/uploads/2019/08/qr-vcard-1.png" alt="" width="266" height="350" /><br /></span></p>
             <p><span style="font-size: medium;">&nbsp;</span></p>
             <p><span style="font-size: medium;">Download &amp; share your QR code.</span></p>
             <p><span style="font-size: medium;">You might be interested to make <a href="user/404.html?id=new" target="_blank" rel="noopener">QR code for URL.</a></span></p>
