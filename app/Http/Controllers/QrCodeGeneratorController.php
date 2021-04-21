@@ -16,8 +16,9 @@ class QrCodeGeneratorController extends Controller
      */
     public function generateUrlCode(Request $request){
         $url = $request->url;
+        $image = null;
         $time =  'refreshed-qr-'.time().'.png';
-        return view('sections.ajax-dynamic-qr-code', compact('url'));
+        return view('sections.ajax-dynamic-qr-code', compact('url', 'image'));
     }
 
     /**
