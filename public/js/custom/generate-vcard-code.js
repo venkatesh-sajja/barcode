@@ -30,11 +30,11 @@ var generate_vcard_code = function(){
         
     }
     var saveQrCampaign = function () {
+        
          $(document).on('click', '.save_qr_campaign',function(e){
             var name = $("#campaign_name_qr").val();
             var data = serializeFormObject($(".page_form"));
             var keys = Object.keys(data);
-            console.log(data);
             value = '';
             if(data.first_name != ''){
                 value = 'First Name:'+data.first_name+'\n';
