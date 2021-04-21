@@ -9,13 +9,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav popup_gntr_qrcode_setting_nav" id="gntr-tab-1" role="tablist">
-                            <li class="nav-item"> <a class="nav-link active" id="gntr_prebuilt_tab-1" data-toggle="pill" href="#gntr_qrshapes_1" role="tab" aria-controls="gntr_qrshapes_1" aria-selected="true">QR Shapes</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="gntr_prebuilt_tab-1" data-toggle="pill" href="#gntr_prebuilt_1" role="tab" aria-controls="gntr_prebuilt_1" aria-selected="true">Pre-Designed</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="gntr_sticker_tab-1" data-toggle="pill" href="#gntr_sticker_1" role="tab" aria-controls="gntr_sticker_1" aria-selected="false">Stickers</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="gntr_color_tab-1" data-toggle="pill" href="#gntr_color_1" role="tab" aria-controls="pills-profile" aria-selected="false">Colors</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="gntr_shape_tab-1" data-toggle="pill" href="#gntr_shape_1" role="tab" aria-controls="pills-contact" aria-selected="false">Shapes</a> </li>
+                            {{-- <li class="nav-item"> <a class="nav-link active" id="gntr_prebuilt_tab-1" data-toggle="pill" href="#gntr_qrshapes_1" role="tab" aria-controls="gntr_qrshapes_1" aria-selected="true">QR Shapes</a> </li> --}}
+                            {{-- <li class="nav-item"> <a class="nav-link" id="gntr_prebuilt_tab-1" data-toggle="pill" href="#gntr_prebuilt_1" role="tab" aria-controls="gntr_prebuilt_1" aria-selected="true">Pre-Designed</a> </li> --}}
+                            {{-- <li class="nav-item"> <a class="nav-link" id="gntr_sticker_tab-1" data-toggle="pill" href="#gntr_sticker_1" role="tab" aria-controls="gntr_sticker_1" aria-selected="false">Stickers</a> </li> --}}
+                            {{-- <li class="nav-item"> <a class="nav-link" id="gntr_color_tab-1" data-toggle="pill" href="#gntr_color_1" role="tab" aria-controls="pills-profile" aria-selected="false">Colors</a> </li> --}}
+                            {{-- <li class="nav-item"> <a class="nav-link" id="gntr_shape_tab-1" data-toggle="pill" href="#gntr_shape_1" role="tab" aria-controls="pills-contact" aria-selected="false">Shapes</a> </li> --}}
                             <li class="nav-item"> <a class="nav-link" id="gntr_logo_tab-1" data-toggle="pill" href="#gntr_logo_1" role="tab" aria-controls="pills-contact" aria-selected="false">Logos</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="gntr_logo_tab-1" data-toggle="pill" href="#gntr_bgimg_1" role="tab" aria-controls="pills-contact" aria-selected="false">Decorate Your Picture</a> </li>
+                            {{-- <li class="nav-item"> <a class="nav-link" id="gntr_logo_tab-1" data-toggle="pill" href="#gntr_bgimg_1" role="tab" aria-controls="pills-contact" aria-selected="false">Decorate Your Picture</a> </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -104,10 +104,13 @@
                                     <li class="gntr_logo_scanme js_qr_logo d-none" data-index="2"><i class="icon-plus_icon"></i></li>
                                 </ul>
                                 <div id="uploadLogo">
-                                    <label for="logoAddPic" class="custom-logoAddPic">    
-                                        <i class="icon-plus"></i> Add Your Own Logo
-                                    </label>
-                                    <input style="display:none" name="imagefile[]" type="file" id="logoAddPic" accept="image/*" onchange="loadLogoImage(event, logoUploaded)">
+                                    <form nctype="multipart/form-data" role="form" action="" id="uploadLogoForm" method="post">
+                                        {{ csrf_field() }}
+                                        <label for="logoAddPic" class="custom-logoAddPic">    
+                                            <i class="icon-plus"></i> Add Your Own Logo
+                                        </label>
+                                        <input style="display:none" name="logo" type="file" id="logoAddPic" accept="image/*">
+                                    </form>
                                 </div>
                             </div>
                             <!-- shapes -->
