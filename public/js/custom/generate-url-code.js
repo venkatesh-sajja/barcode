@@ -31,7 +31,8 @@ var generate_url_code = function(){
                 type: 'GET',
                 dataType: 'HTML',
                 success: function (data) {
-                    $(".gntr_qrcode_img").html(data)
+                    $(".gntr_qrcode_img").html(data);
+                    $(".popup_qr_preview").html(data);
                     $(".show_loader").hide();
                 }
             })

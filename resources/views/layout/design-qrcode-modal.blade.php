@@ -98,10 +98,10 @@
                             <!-- logo -->
                             <div class="tab-pane fade" id="gntr_logo_1" role="tabpanel" aria-labelledby="gntr_logo_tab-1">
                                 <ul class="gntr_logo_list">
-                                    <li class="active gntr_logo_none js_qr_logo"><i class="icon-cross"></i></li>
+                                    <!-- <li class="active gntr_logo_none js_qr_logo"><i class="icon-cross"></i></li>
                                     <li class="gntr_logo_scanme_cor js_qr_logo" data-index="0"><i class="icon-scanme-cor"></i></li>
                                     <li class="gntr_logo_scanme js_qr_logo" data-index="1"><i class="icon-scanme"></i></li>
-                                    <li class="gntr_logo_scanme js_qr_logo d-none" data-index="2"><i class="icon-plus_icon"></i></li>
+                                    <li class="gntr_logo_scanme js_qr_logo d-none" data-index="2"><i class="icon-plus_icon"></i></li> -->
                                 </ul>
                                 <div id="uploadLogo">
                                     <form nctype="multipart/form-data" role="form" action="" id="uploadLogoForm" method="post">
