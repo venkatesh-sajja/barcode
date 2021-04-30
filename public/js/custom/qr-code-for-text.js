@@ -24,6 +24,7 @@ var qr_code_for_text = function () {
                 dataType: 'HTML',
                 success: function (data) {
                     $(".gntr_qrcode_img").html(data)
+                    $(".popup_qr_preview").html(data);
                     $(".show_loader").hide();
                 }
             })

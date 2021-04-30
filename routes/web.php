@@ -25,4 +25,5 @@ Route::post('/custom_login', 'HomeController@custom_login')->name('custom_login'
 
 Route::get('/get_url_qrcode', ['as' => 'get_url_qrcode', 'uses' => 'QrCodeGeneratorController@generateUrlCode']);
 Route::any('/save_campaign', ['as' => 'save_campaign', 'uses' => 'QrCodeGeneratorController@saveCampiagn']);
+Route::any('/upload_custom_logo', ['as' => 'upload_custom_logo', 'uses' => 'QrCodeGeneratorController@uploadCustomLogo']);
 Route::get('/vdcard', 'QrCodeGeneratorController@gnerateVDCard')->name('vdcard');

@@ -1,6 +1,11 @@
 @php
     $current_route = Request::route()->getName()
 @endphp
+<style>
+.gntr_logo_scanme img {
+    width: 100%;
+}
+</style>
 <section>
     <div class="container gntr_nav_wrapper mt-4 mb-4">
         <div class="row">

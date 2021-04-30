@@ -16,8 +16,22 @@ class QrCodeGeneratorController extends Controller
      */
     public function generateUrlCode(Request $request){
         $url = $request->url;
+        $image = $request->image;
+        if(!empty($image)){
+            $image = 'uploads/'.$image;
+            // $image = str_replace('/', '\\', $image);
+            // dd(url($image));
+            $image = url($image);
+            $image = QrCode::style('round')
+            ->eyeColor(0, 230, 20, 42, 20, 60, 232)
+            ->size(260)
+            ->format('png')
+            ->merge($image, .3, true)
+            ->generate($url) ;
+        }
+         
         $time =  'refreshed-qr-'.time().'.png';
-        return view('sections.ajax-dynamic-qr-code', compact('url'));
+        return view('sections.ajax-dynamic-qr-code', compact('url', 'image'));
     }
 
     /**
@@ -64,36 +78,59 @@ class QrCodeGeneratorController extends Controller
     public function gnerateVDCard(){
         return view('vcard.vcard_form');
     }
-    public function gnerateVDCard1(){
-        $vcard = new VCard();
+    // public function gnerateVDCard1(){
+    //     $vcard = new VCard();
 
-        // define variables
-        $lastname = 'Desloovere';
-        $firstname = 'Jeroen';
-        $additional = '';
-        $prefix = '';
-        $suffix = '';
+    //     // define variables
+    //     $lastname = 'Desloovere';
+    //     $firstname = 'Jeroen';
+    //     $additional = '';
+    //     $prefix = '';
+    //     $suffix = '';
 
-        // add personal data
-        $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
+    //     // add personal data
+    //     $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
 
-        // add work data
-        $vcard->addCompany('Siesqo');
-        $vcard->addJobtitle('Web Developer');
-        $vcard->addRole('Data Protection Officer');
-        $vcard->addEmail('info@jeroendesloovere.be');
-        $vcard->addPhoneNumber(1234121212, 'PREF;WORK');
-        $vcard->addPhoneNumber(123456789, 'WORK');
-        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
-        $vcard->addLabel('street, worktown, workpostcode Belgium');
-        $vcard->addURL('http://www.jeroendesloovere.be');
+    //     // add work data
+    //     $vcard->addCompany('Siesqo');
+    //     $vcard->addJobtitle('Web Developer');
+    //     $vcard->addRole('Data Protection Officer');
+    //     $vcard->addEmail('info@jeroendesloovere.be');
+    //     $vcard->addPhoneNumber(1234121212, 'PREF;WORK');
+    //     $vcard->addPhoneNumber(123456789, 'WORK');
+    //     $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
+    //     $vcard->addLabel('street, worktown, workpostcode Belgium');
+    //     $vcard->addURL('http://www.jeroendesloovere.be');
 
-       // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
+    //    // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
 
-        // return vcard as a string
-        //return $vcard->getOutput();
+    //     // return vcard as a string
+    //     //return $vcard->getOutput();
 
-        // return vcard as a download
-        return $vcard->download();
+    //     // return vcard as a download
+    //     return $vcard->download();
+    // }
+
+    /**
+     * function to upload the custom logo for qr code
+     */
+    public function uploadCustomLogo(Request $request){
+        try{
+            $file_name = time().'.'.$request->logo->extension();
+            $request->logo->move(public_path('uploads'), $file_name);
+            
+        }catch(\Exception $e){
+            $return_arr = array(
+                'message' => $e->getMessage(),
+                'status' => false
+            );
+            return json_encode($return_arr);
+        }
+        $return_arr = array(
+            'message' => 'uploaded successfully',
+            'status' => true,
+            'image' => $file_name
+        );
+        return json_encode($return_arr);
     }
 }
