@@ -5,7 +5,6 @@ var generate_vcard_code = function(){
         $(".show_loader").hide();
 
     }
-
     var getUrlQrCode = function (url) {
         
          $(".show_loader").show();
@@ -25,16 +24,12 @@ var generate_vcard_code = function(){
                         $(".show_loader").hide();
                 }
             })
-        }
-        
-        
+        }  
     }
     var saveQrCampaign = function () {
-
          $(document).on('click', '.save_qr_campaign',function(e){
             var name = $("#campaign_name_qr").val();
             var data = serializeFormObject($(".page_form"));
-            
             value = '';
             var keys = Object.keys(data);
             if(data.first_name != ''){
